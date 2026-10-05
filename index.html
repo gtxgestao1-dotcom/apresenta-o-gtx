@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projeto de Consultoria e Revisão Financeira Gerencial 2026 - Fretou Brasil × GTX. Onboarding, Escopo, Metodologia, Cronograma e Próximos Passos.">
+  <meta name="author" content="GTX Consultoria Estratégica">
+  <title>Fretou Brasil × GTX ↗ | Projeto de Consultoria e Revisão Financeira Gerencial 2026</title>
+  
+  <!-- Favicon Monograma GTX -->
+  <link rel="icon" type="image/png" href="assets/gtx-logo-chrome.png">
+  
+  <!-- Google Fonts: Sora (Títulos) + Inter (Textos) conforme Manual Oficial -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Global Progress Bar -->
+  <div class="global-progress-bar" id="globalProgressBar" aria-hidden="true">
+    <div class="global-progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Header Bar (HUD) -->
+  <header class="presentation-header" role="banner">
+    <div class="brand-monogram" id="brandHeaderLogo" title="Voltar ao início">
+      <img src="assets/gtx-logo-chrome.png" alt="Logo GTX Monograma Prata Cromado">
+      <div class="brand-title-wrap">
+        <span class="brand-title">GTX CONSULTORIA</span>
+        <span class="brand-sub">Estratégia para crescer ↗</span>
+      </div>
+    </div>
+
+    <div class="header-center-info">
+      <div class="client-badge-pill" id="clientBadgeDisplay" title="Parceria Oficial">
+        <span class="dot"></span>
+        <span>Projeto: <strong id="headerClientName">Fretou Brasil × GTX</strong></span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="hud-btn" id="btnToggleOverview" title="Visão Geral dos Slides (Atalho: G ou O)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Visão Geral</span>
+      </button>
+
+      <button class="hud-btn" id="btnToggleEditMode" title="Ativar edição direta de texto nos slides (Atalho: E)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+        <span>Editar Slides</span>
+      </button>
+
+      <button class="hud-btn" id="btnOpenCustomizer" title="Personalizar dados do cliente e projeto">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        <span>Configurar</span>
+      </button>
+
+      <button class="hud-btn" id="btnPrintPdf" title="Imprimir ou Salvar em PDF (Atalho: P)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        <span>PDF / Print</span>
+      </button>
+
+      <button class="hud-btn primary" id="btnToggleFullscreen" title="Tela Cheia (Atalho: F)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+        <span>Apresentar</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Live Edit Indicator Banner -->
+  <div class="live-edit-banner" id="liveEditBanner">
+    <span>✏️ <strong>Modo Edição Ativo</strong>: Clique diretamente em qualquer texto dos slides para alterar.</span>
+    <button class="hud-btn primary" id="btnSaveInlineEdits" style="padding: 3px 10px; font-size: 0.72rem;">Salvar Alterações</button>
+  </div>
+
+  <!-- Deck Viewport -->
+  <main class="deck-viewport" id="deckViewport">
+
+    <!-- ====================================================================
+         SLIDE 1: ABERTURA
+         ==================================================================== -->
+    <section class="slide active" id="slide-1" data-index="0" data-title="Abertura">
+      <div class="slide-bg-arrow" aria-hidden="true">↗</div>
+      <div class="slide-content">
+        <div class="cover-layout">
+          <div class="cover-left">
+            <div class="cover-tagline-pill">
+              <span class="arrow-icon">↗</span>
+              <span contenteditable="false" data-editable="s1-tag">GTX — Estratégia para crescer</span>
+            </div>
+
+            <div class="cover-partnership-header">
+              <span contenteditable="false" data-editable="s1-partners">Fretou Brasil <span class="divider-x">×</span> GTX</span>
+            </div>
+
+            <h1 class="cover-title">
+              <span contenteditable="false" data-editable="s1-title-prefix">Projeto de Consultoria e</span>
+              <span class="cromo-text" contenteditable="false" data-editable="s1-title-main">Revisão Financeira Gerencial 2026</span>
+            </h1>
+
+            <p class="cover-desc" contenteditable="false" data-editable="s1-desc">
+              <strong>Onboarding Executivo</strong> &bull; Escopo &bull; Metodologia &bull; Cronograma &bull; Próximos Passos.
+            </p>
+
+            <div class="cover-meta-grid">
+              <div class="meta-box">
+                <span class="meta-label">Cliente</span>
+                <span class="meta-value accent" id="coverClientName" contenteditable="false" data-editable="s1-client">Fretou Brasil</span>
+              </div>
+              <div class="meta-box">
+                <span class="meta-label">Consultoria</span>
+                <span class="meta-value" contenteditable="false" data-editable="s1-consulting">GTX Gestão & Tecnologia</span>
+              </div>
+              <div class="meta-box">
+                <span class="meta-label">Ciclo Analisado</span>
+                <span class="meta-value" id="coverProjectCycle" contenteditable="false" data-editable="s1-cycle">Exercício 2026</span>
+              </div>
+              <div class="meta-box">
+                <span class="meta-label">Fase</span>
+                <span class="meta-value" contenteditable="false" data-editable="s1-status">Onboarding Oficial</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cover-right">
+            <div class="cover-logo-hero-wrap">
+              <div class="cover-ambient-glow"></div>
+              <img src="assets/gtx-logo-chrome.png" alt="Símbolo GTX Chrome 3D com Seta Ascendente" class="cover-hero-logo">
+              <div class="cover-sub-badge">
+                <span>REVISÃO &bull; ANÁLISE &bull; ORIENTAÇÃO GERENCIAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 2: ESCOPO DO PROJETO (7 FRENTES ESTRUTURADAS)
+         ==================================================================== -->
+    <section class="slide" id="slide-2" data-index="1" data-title="Escopo do Projeto">
+      <div class="slide-bg-arrow" aria-hidden="true">↗</div>
+      <div class="slide-content">
+        <div class="slide-category">
+          <span class="phase-num">01</span>
+          <span class="slash">/</span>
+          <span>Atividades Contratadas</span>
+        </div>
+
+        <h2 class="slide-title">
+          Escopo do Projeto: <span class="highlight-blue">7 Frentes de Atuação</span>
+        </h2>
+
+        <p class="slide-subtitle" contenteditable="false" data-editable="s2-subtitle">
+          O contrato contempla revisão, análise financeira gerencial, relatórios periódicos, reuniões estratégicas e construção progressiva do dashboard.
+        </p>
+
+        <div class="scope-grid-7">
+          <!-- 01 -->
+          <div class="scope-card highlight">
+            <span class="scope-card-num">01. FRENTE</span>
+            <h3 class="scope-card-title" contenteditable="false" data-editable="s2-c1-t">Mapeamento Financeiro</h3>
+            <p class="scope-card-desc" contenteditable="false" data-editable="s2-c1-d">
+              Entendimento do fluxo financeiro atual e de como as informações e valores percorrem a operação da empresa.
+            </p>
+          </div>
+
+          <!-- 02 -->
+          <div class="scope-card">
+            <span class="scope-card-num">02. FRENTE</span>
+            <h3 class="scope-card-title" contenteditable="false" data-editable="s2-c2-t">Conciliação Financeira</h3>
+            <p class="scope-card-desc" contenteditable="false" data-editable="s2-c2-d">
+              Cruzamento analítico rigoroso: sistema de gestão financeira versus extratos de todas as contas bancárias.
+            </p>
+          </div>
+
+          <!-- 03 -->
+          <div class="scope-card">
+            <span class="scope-card-num">03. FRENTE</span>
+            <h3 class="scope-card-title" contenteditable="false" data-editable="s2-c3-t">Revisão de Lançamentos</h3>
+            <p class="scope-card-desc" contenteditable="false" data-editable="s2-c3-d">
+              Checagem detalhada de receitas, despesas, entradas, saídas, contas a pagar e contas a receber.
+            </p>
+          </div>
+
+          <!-- 04 -->
+          <div class="scope-card">
+            <span class="scope-card-num">04. FRENTE</span>
+            <h3 class="scope-card-title" contenteditable="false" data-editable="s2-c4-t">Identificação de Inconsistências</h3>
+            <p class="scope-card-desc" contenteditable="false" data-editable="s2-c4-d">
+              Mapeamento de divergências, duplicidades, omissões e movimentações atípicas que demandem esclarecimento.
+            </p>
+          </div>
+
+          <!-- 05 -->
+          <div class="scope-card highlight">
+            <span class="scope-card-num">05. FRENTE</span>
+            <h3 class="scope-card-title" contenteditable="false" data-editable="s2-c5-t">Análise Financeira Gerencial</h3>
+            <p class="scope-card-desc" contenteditable="false" data-editable="s2-c5-d">
+              Estruturação e leitura de DRE gerencial, fluxo de caixa real, comportamento financeiro, indicadores e KPIs.
+            </p>
+          </div>
+
+          <!-- 06 -->
+          <div class="scope-card">
+            <span class="scope-card-num">06. FRENTE</span>
+            <h3 class="scope-card-title" contenteditable="false" data-editable="s2-c6-t">Orientação de Processos</h3>
+            <p class="scope-card-desc" contenteditable="false" data-editable="s2-c6-d">
+              Identificação de oportunidades de melhoria e proposição de diretrizes para adequação dos fluxos operacionais.
+            </p>
+          </div>
+
+          <!-- 07 -->
+          <div class="scope-card" style="grid-column: span 2;">
+            <span class="scope-card-num">07. FRENTE</span>
+            <h3 class="scope-card-title" contenteditable="false" data-editable="s2-c7-t">Relatórios e Dashboard Executivo</h3>
+            <p class="scope-card-desc" contenteditable="false" data-editable="s2-c7-d">
+              Emissão de relatórios periódicos de acompanhamento, visão estratégica e construção progressiva do Dashboard Executivo 2026.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 3: METODOLOGIA DE TRABALHO
+         ==================================================================== -->
+    <section class="slide" id="slide-3" data-index="2" data-title="Metodologia de Trabalho">
+      <div class="slide-bg-arrow" aria-hidden="true">↗</div>
+      <div class="slide-content">
+        <div class="slide-category">
+          <span class="phase-num">02</span>
+          <span class="slash">/</span>
+          <span>Pipeline de Atuação</span>
+        </div>
+
+        <h2 class="slide-title">
+          Metodologia de Trabalho: <span class="highlight-blue">Do Dado Bruto à Decisão</span>
+        </h2>
+
+        <p class="slide-subtitle" contenteditable="false" data-editable="s3-subtitle">
+          Fluxo sistemático de cruzamento e validação para transformar informações operacionais em inteligência financeira confiável.
+        </p>
+
+        <!-- Pipeline de 6 colunas -->
+        <div class="methodology-pipeline-row">
+          <!-- 1 DADOS -->
+          <div class="methodology-col-card">
+            <div class="methodology-icon-circle">📂</div>
+            <h4 class="methodology-step-name" contenteditable="false" data-editable="s3-st1-t">DADOS</h4>
+            <p class="methodology-step-items" contenteditable="false" data-editable="s3-st1-d">
+              Documentos &bull; Extratos &bull; Sistema &bull; Relatórios
+            </p>
+          </div>
+
+          <!-- 2 REVISÃO -->
+          <div class="methodology-col-card">
+            <div class="methodology-icon-circle">🔍</div>
+            <h4 class="methodology-step-name" contenteditable="false" data-editable="s3-st2-t">REVISÃO</h4>
+            <p class="methodology-step-items" contenteditable="false" data-editable="s3-st2-d">
+              Conciliação &bull; Conferência &bull; Cruzamento de informações
+            </p>
+          </div>
+
+          <!-- 3 ACHADOS -->
+          <div class="methodology-col-card">
+            <div class="methodology-icon-circle">⚠️</div>
+            <h4 class="methodology-step-name" contenteditable="false" data-editable="s3-st3-t">ACHADOS</h4>
+            <p class="methodology-step-items" contenteditable="false" data-editable="s3-st3-d">
+              Divergências &bull; Questionamentos &bull; Pontos de atenção
+            </p>
+          </div>
+
+          <!-- 4 VALIDAÇÃO -->
+          <div class="methodology-col-card accent">
+            <div class="methodology-icon-circle">🤝</div>
+            <h4 class="methodology-step-name" contenteditable="false" data-editable="s3-st4-t">VALIDAÇÃO</h4>
+            <p class="methodology-step-items" contenteditable="false" data-editable="s3-st4-d">
+              Alinhamento conjunto: <strong>GTX + Fretou</strong>
+            </p>
+          </div>
+
+          <!-- 5 ANÁLISE -->
+          <div class="methodology-col-card">
+            <div class="methodology-icon-circle">📈</div>
+            <h4 class="methodology-step-name" contenteditable="false" data-editable="s3-st5-t">ANÁLISE</h4>
+            <p class="methodology-step-items" contenteditable="false" data-editable="s3-st5-d">
+              DRE Gerencial &bull; Fluxo de Caixa &bull; KPIs
+            </p>
+          </div>
+
+          <!-- 6 ENTREGA -->
+          <div class="methodology-col-card accent">
+            <div class="methodology-icon-circle">🚀</div>
+            <h4 class="methodology-step-name" contenteditable="false" data-editable="s3-st6-t">ENTREGA</h4>
+            <p class="methodology-step-items" contenteditable="false" data-editable="s3-st6-d">
+              Relatório Executivo &bull; Dashboard &bull; Reunião estratégica
+            </p>
+          </div>
+        </div>
+
+        <!-- Classificação durante o processo -->
+        <div class="classification-flow-box">
+          <div class="classification-label">
+            Classificação Durante o Processo:
+          </div>
+          <div class="classification-steps-wrap">
+            <div class="classif-badge status-validation">
+              <span>01. Ponto para Validação</span>
+            </div>
+            <span style="color: var(--gtx-silver); font-weight: bold;">→</span>
+            <div class="classif-badge">
+              <span>02. Esclarecido / Inconsistência Confirmada</span>
+            </div>
+            <span style="color: var(--gtx-silver); font-weight: bold;">→</span>
+            <div class="classif-badge status-action">
+              <span>03. Orientação / Plano de Ação ↗</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 4: VISÃO VISUAL DE CRONOGRAMA & ROADMAP EXECUTIVO
+         ==================================================================== -->
+    <section class="slide" id="slide-4" data-index="3" data-title="Visão de Cronograma">
+      <div class="slide-bg-arrow" aria-hidden="true">↗</div>
+      <div class="slide-content">
+        <div class="slide-category">
+          <span class="phase-num">03</span>
+          <span class="slash">/</span>
+          <span>Linha do Tempo de Execução</span>
+        </div>
+
+        <h2 class="slide-title">
+          Visão de Cronograma: <span class="highlight-blue">Ciclos Trimestrais & Marcos de Entrega</span>
+        </h2>
+
+        <p class="slide-subtitle" contenteditable="false" data-editable="s4-subtitle">
+          Mapeamento visual do fluxo de trabalho mês a mês, desde a revisão inicial de Q1 até a consolidação anual e reunião executiva final.
+        </p>
+
+        <div class="visual-schedule-container">
+          <!-- Cabeçalho de Meses / Trimestres -->
+          <div class="timeline-quarter-header-row">
+            <div class="col-title">Frentes / Ciclos</div>
+            <div class="quarter-header-box highlight">
+              <span class="q-name">MÊS 01 &bull; Q1</span>
+              <span class="m-name">Outubro/26 (Jan–Mar)</span>
+            </div>
+            <div class="quarter-header-box">
+              <span class="q-name">MÊS 02 &bull; Q2</span>
+              <span class="m-name">Novembro/26 (Abr–Jun)</span>
+            </div>
+            <div class="quarter-header-box">
+              <span class="q-name">MÊS 03 &bull; Q3</span>
+              <span class="m-name">Dezembro/26 (Jul–Set)</span>
+            </div>
+            <div class="quarter-header-box">
+              <span class="q-name">MÊS 04 &bull; Q4</span>
+              <span class="m-name">Janeiro/27 (Out–Dez)</span>
+            </div>
+            <div class="quarter-header-box highlight">
+              <span class="q-name">FECHAMENTO</span>
+              <span class="m-name">Até 15/01/27</span>
+            </div>
+          </div>
+
+          <!-- Quadro Visual de Trilhas (Timeline Board) -->
+          <div class="timeline-visual-board">
+            <!-- Trilha 1: Coleta & Conciliação -->
+            <div class="timeline-visual-row">
+              <div class="timeline-track-label">
+                <span class="track-main-name">Conciliação Bancária</span>
+                <span class="track-sub-name">Sistema × Extratos</span>
+              </div>
+              <div class="timeline-bar-pill status-active">✓ Conciliação Q1</div>
+              <div class="timeline-bar-pill status-planned">Conciliação Q2</div>
+              <div class="timeline-bar-pill status-planned">Conciliação Q3</div>
+              <div class="timeline-bar-pill status-planned">Conciliação Q4</div>
+              <div class="timeline-bar-pill status-milestone">Fechamento Base</div>
+            </div>
+
+            <!-- Trilha 2: Revisão & Inconsistências -->
+            <div class="timeline-visual-row">
+              <div class="timeline-track-label">
+                <span class="track-main-name">Revisão de Lançamentos</span>
+                <span class="track-sub-name">Divergências & Duplicidades</span>
+              </div>
+              <div class="timeline-bar-pill status-active">Mapeamento Q1</div>
+              <div class="timeline-bar-pill status-planned">Mapeamento Q2</div>
+              <div class="timeline-bar-pill status-planned">Mapeamento Q3</div>
+              <div class="timeline-bar-pill status-planned">Mapeamento Q4</div>
+              <div class="timeline-bar-pill status-milestone">Auditoria 2026</div>
+            </div>
+
+            <!-- Trilha 3: Análise Gerencial -->
+            <div class="timeline-visual-row">
+              <div class="timeline-track-label">
+                <span class="track-main-name">Análise Financeira</span>
+                <span class="track-sub-name">DRE, Caixa & KPIs</span>
+              </div>
+              <div class="timeline-bar-pill status-active">DRE & KPIs Q1</div>
+              <div class="timeline-bar-pill status-planned">Comparativos Q1+Q2</div>
+              <div class="timeline-bar-pill status-planned">Evolução Q1 a Q3</div>
+              <div class="timeline-bar-pill status-planned">Visão Consolidada</div>
+              <div class="timeline-bar-pill status-milestone">Balanço Gerencial</div>
+            </div>
+
+            <!-- Trilha 4: Dashboard 2026 -->
+            <div class="timeline-visual-row">
+              <div class="timeline-track-label">
+                <span class="track-main-name">Dashboard Executivo</span>
+                <span class="track-sub-name">Construção Progressiva</span>
+              </div>
+              <div class="timeline-bar-pill status-active">Release v1.0 (Q1)</div>
+              <div class="timeline-bar-pill status-planned">Acumulado (Q1+Q2)</div>
+              <div class="timeline-bar-pill status-planned">Acumulado (Q1→Q3)</div>
+              <div class="timeline-bar-pill status-planned">Versão Anual Completa</div>
+              <div class="timeline-bar-pill status-milestone">Entrega Final BI</div>
+            </div>
+          </div>
+
+          <!-- Cards de Destaque dos Marcos Contratuais -->
+          <div class="timeline-milestones-summary-strip">
+            <div class="milestone-highlight-card">
+              <div class="milestone-badge-icon">🗓</div>
+              <div class="milestone-card-info">
+                <h5>Ciclos Mensais de Entrega</h5>
+                <p>Apresentação dos relatórios trimestrais a cada 30 dias de projeto.</p>
+              </div>
+            </div>
+
+            <div class="milestone-highlight-card final">
+              <div class="milestone-badge-icon">⚡</div>
+              <div class="milestone-card-info">
+                <h5>Até 10/01/2027: Marco M1</h5>
+                <p>Consolidação financeira completa de todo o exercício de 2026.</p>
+              </div>
+            </div>
+
+            <div class="milestone-highlight-card final">
+              <div class="milestone-badge-icon">🚀</div>
+              <div class="milestone-card-info">
+                <h5>15/01/2027: Marco Final</h5>
+                <p>Reunião executiva de encerramento e validação estratégica com a Diretoria.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 5: EVOLUÇÃO DO DASHBOARD
+         ==================================================================== -->
+    <section class="slide" id="slide-5" data-index="4" data-title="Evolução do Dashboard">
+      <div class="slide-bg-arrow" aria-hidden="true">↗</div>
+      <div class="slide-content">
+        <div class="slide-category">
+          <span class="phase-num">04</span>
+          <span class="slash">/</span>
+          <span>Visão Gerencial Progressiva</span>
+        </div>
+
+        <h2 class="slide-title">
+          Evolução do Dashboard: <span class="highlight-silver">Construção Cumulativa 2026</span>
+        </h2>
+
+        <!-- Mensagem Principal em Destaque -->
+        <div class="dashboard-quote-strip">
+          "O Dashboard evolui junto com a revisão e validação dos dados."
+        </div>
+
+        <div class="dashboard-evolution-grid">
+          <!-- Outubro -->
+          <div class="dash-stage-card">
+            <span class="dash-month-tag">Mês 01 &bull; Outubro</span>
+            <h3 class="dash-stage-title" contenteditable="false" data-editable="s5-m1-t">Q1</h3>
+            <span class="dash-period-range">JAN → MAR</span>
+            <div class="dash-progress-meter"><div class="meter-fill" style="width: 25%;"></div></div>
+            <ul class="dash-features-list">
+              <li><span class="arrow">↗</span> Primeira versão do dashboard</li>
+              <li><span class="arrow">↗</span> Validação dos primeiros indicadores</li>
+              <li><span class="arrow">↗</span> Base histórica Q1 consolidada</li>
+            </ul>
+          </div>
+
+          <!-- Novembro -->
+          <div class="dash-stage-card">
+            <span class="dash-month-tag">Mês 02 &bull; Novembro</span>
+            <h3 class="dash-stage-title" contenteditable="false" data-editable="s5-m2-t">Q1 + Q2</h3>
+            <span class="dash-period-range">JAN → JUN</span>
+            <div class="dash-progress-meter"><div class="meter-fill" style="width: 50%;"></div></div>
+            <ul class="dash-features-list">
+              <li><span class="arrow">↗</span> Análise comparativa entre trimestres</li>
+              <li><span class="arrow">↗</span> Tendências de receitas e despesas</li>
+              <li><span class="arrow">↗</span> Visão semestral consolidada</li>
+            </ul>
+          </div>
+
+          <!-- Dezembro -->
+          <div class="dash-stage-card">
+            <span class="dash-month-tag">Mês 03 &bull; Dezembro</span>
+            <h3 class="dash-stage-title" contenteditable="false" data-editable="s5-m3-t">Q1 + Q2 + Q3</h3>
+            <span class="dash-period-range">JAN → SET</span>
+            <div class="dash-progress-meter"><div class="meter-fill" style="width: 75%;"></div></div>
+            <ul class="dash-features-list">
+              <li><span class="arrow">↗</span> Evolução de margem e fluxo de caixa</li>
+              <li><span class="arrow">↗</span> Identificação de sazonalidade</li>
+              <li><span class="arrow">↗</span> Calibração de projeções do ano</li>
+            </ul>
+          </div>
+
+          <!-- Janeiro -->
+          <div class="dash-stage-card final">
+            <span class="dash-month-tag">Mês 04 &bull; Janeiro</span>
+            <h3 class="dash-stage-title" style="color: var(--gtx-white);" contenteditable="false" data-editable="s5-m4-t">2026 COMPLETO</h3>
+            <span class="dash-period-range" style="color: var(--gtx-electric-blue);">JAN → DEZ</span>
+            <div class="dash-progress-meter"><div class="meter-fill" style="width: 100%;"></div></div>
+            <ul class="dash-features-list">
+              <li><span class="arrow">↗</span> Fechamento anual consolidado</li>
+              <li><span class="arrow">↗</span> DRE e balanço gerencial 2026</li>
+              <li><span class="arrow">↗</span> Dashboard executivo definitivo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 6: RESPONSABILIDADES DO PROJETO (GTX × FRETOU)
+         ==================================================================== -->
+    <section class="slide" id="slide-6" data-index="5" data-title="Responsabilidades">
+      <div class="slide-bg-arrow" aria-hidden="true">↗</div>
+      <div class="slide-content">
+        <div class="slide-category">
+          <span class="phase-num">05</span>
+          <span class="slash">/</span>
+          <span>Matriz de Papéis Contratuais</span>
+        </div>
+
+        <h2 class="slide-title">
+          Responsabilidades do Projeto: <span class="highlight-blue">GTX × Fretou</span>
+        </h2>
+
+        <p class="slide-subtitle" contenteditable="false" data-editable="s6-subtitle">
+          Divisão clara e equilibrada estabelecida em contrato para assegurar eficiência e transparência.
+        </p>
+
+        <div class="responsibilities-grid">
+          <!-- Coluna GTX -->
+          <div class="resp-column-card">
+            <div class="resp-header">
+              <h3 class="resp-title">GTX</h3>
+              <span class="resp-badge gtx-side">Consultoria & Auditoria Gerencial</span>
+            </div>
+            <div class="resp-actions-list">
+              <div class="resp-item"><span class="icon">↗</span> <span>Entender</span></div>
+              <div class="resp-item"><span class="icon">↗</span> <span>Conferir</span></div>
+              <div class="resp-item"><span class="icon">↗</span> <span>Conciliar</span></div>
+              <div class="resp-item"><span class="icon">↗</span> <span>Identificar</span></div>
+              <div class="resp-item"><span class="icon">↗</span> <span>Analisar</span></div>
+              <div class="resp-item"><span class="icon">↗</span> <span>Orientar</span></div>
+              <div class="resp-item"><span class="icon">↗</span> <span>Reportar</span></div>
+              <div class="resp-item"><span class="icon">↗</span> <span>Consolidar</span></div>
+            </div>
+          </div>
+
+          <!-- Coluna FRETOU -->
+          <div class="resp-column-card">
+            <div class="resp-header">
+              <h3 class="resp-title">FRETOU</h3>
+              <span class="resp-badge fretou-side">Operação & Governança Interna</span>
+            </div>
+            <div class="resp-actions-list">
+              <div class="resp-item"><span class="icon" style="color: var(--gtx-silver);">✓</span> <span>Disponibilizar dados</span></div>
+              <div class="resp-item"><span class="icon" style="color: var(--gtx-silver);">✓</span> <span>Fornecer extratos e documentos</span></div>
+              <div class="resp-item"><span class="icon" style="color: var(--gtx-silver);">✓</span> <span>Disponibilizar acessos a sistemas</span></div>
+              <div class="resp-item"><span class="icon" style="color: var(--gtx-silver);">✓</span> <span>Esclarecer movimentações pontuais</span></div>
+              <div class="resp-item"><span class="icon" style="color: var(--gtx-silver);">✓</span> <span>Validar informações e achados</span></div>
+              <div class="resp-item"><span class="icon" style="color: var(--gtx-silver);">✓</span> <span>Executar ajustes operacionais internos</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 7: LIMITES DO ESCOPO (AO LADO DE RESPONSABILIDADES)
+         ==================================================================== -->
+    <section class="slide" id="slide-7" data-index="6" data-title="Limites do Escopo">
+      <div class="slide-bg-arrow" aria-hidden="true">↗</div>
+      <div class="slide-content">
+        <div class="slide-category">
+          <span class="phase-num">06</span>
+          <span class="slash">/</span>
+          <span>Clareza & Governança</span>
+        </div>
+
+        <div class="limits-layout">
+          <div class="limits-left">
+            <h2 class="limits-banner-title" contenteditable="false" data-editable="s7-title">
+              "Nosso papel é <span class="highlight-silver">analisar, orientar</span> e gerar <span class="highlight-blue">clareza</span>."
+            </h2>
+
+            <p style="font-size: 0.95rem; color: var(--gtx-silver); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">
+              Não fazem parte do escopo contratado:
+            </p>
+
+            <div class="non-scope-grid">
+              <div class="non-scope-card">
+                <div class="non-scope-icon">✕</div>
+                <div class="non-scope-text">
+                  <h4>Escrituração contábil ou fiscal</h4>
+                  <p>Declarações fiscais, tributárias ou apuração contábil oficial.</p>
+                </div>
+              </div>
+
+              <div class="non-scope-card">
+                <div class="non-scope-icon">✕</div>
+                <div class="non-scope-text">
+                  <h4>Manutenção de sistemas</h4>
+                  <p>Correções técnicas de infraestrutura ou códigos de softwares.</p>
+                </div>
+              </div>
+
+              <div class="non-scope-card">
+                <div class="non-scope-icon">✕</div>
+                <div class="non-scope-text">
+                  <h4>Execução operacional das correções</h4>
+                  <p>Lançamentos manuais substitutivos ou digitação de rotina.</p>
+                </div>
+              </div>
+
+              <div class="non-scope-card">
+                <div class="non-scope-icon">✕</div>
+                <div class="non-scope-text">
+                  <h4>Atividades não previstas</h4>
+                  <p>Demandas extraordinárias fora do contrato inicial.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="limits-notice-box">
+              <p contenteditable="false" data-editable="s7-note">
+                "A GTX identifica, analisa e orienta. A implementação das correções operacionais permanece sob responsabilidade da equipe financeira da Fretou, salvo alinhamento adicional entre as partes."
+              </p>
+            </div>
+          </div>
+
+          <div class="limits-right-panel">
+            <span class="limits-badge-tag">Diretriz Contratual</span>
+            <h3 class="limits-panel-title">Foco Estratégico</h3>
+            <p class="limits-panel-desc">
+              Esta delimitação garante agilidade na entrega dos relatórios, imparcialidade na revisão e proteção contra desvios de foco operacional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 8: DEPENDÊNCIAS PARA O CRONOGRAMA (AO LADO DE RESPONSABILIDADES)
+         ==================================================================== -->
+    <section class="slide" id="slide-8" data-index="7" data-title="Dependências do Cronograma">
+      <div class="slide-bg-arrow" aria-hidden="true">↗</div>
+      <div class="slide-content">
+        <div class="slide-category">
+          <span class="phase-num">07</span>
+          <span class="slash">/</span>
+          <span>Fatores Críticos de Sucesso</span>
+        </div>
+
+        <h2 class="slide-title">
+          Dependências para o Cronograma: <span class="highlight-blue">Qualidade & Agilidade</span>
+        </h2>
+
+        <div class="dependencies-layout">
+          <!-- Caixa com a fórmula de entrada -> processamento -> saída -->
+          <div class="dep-formula-box">
+            <div class="dep-inputs-row">
+              <span class="dep-pill-item">Documentos</span>
+              <span class="dep-plus">+</span>
+              <span class="dep-pill-item">Extratos</span>
+              <span class="dep-plus">+</span>
+              <span class="dep-pill-item">Acessos</span>
+              <span class="dep-plus">+</span>
+              <span class="dep-pill-item">Relatórios</span>
+              <span class="dep-plus">+</span>
+              <span class="dep-pill-item">Esclarecimentos</span>
+            </div>
+
+            <div class="dep-down-arrow">↓</div>
+
+            <div class="dep-gtx-core">
+              <h3>ANÁLISE GTX</h3>
+            </div>
+
+            <div class="dep-down-arrow">↓</div>
+
+            <div class="dep-output-row">
+              <span>Relatório Executivo &bull; Dashboard 2026 &bull; Reunião Estratégica</span>
+            </div>
+          </div>
+
+          <!-- Mensagem Contratual e Estratégica -->
+          <div class="dep-message-card">
+            <p class="lead" contenteditable="false" data-editable="s8-lead">
+              "A qualidade e a velocidade da análise dependem diretamente da disponibilidade e integridade das informações."
+            </p>
+            <p class="note" contenteditable="false" data-editable="s8-note">
+              Conforme previsto no contrato, eventuais atrasos ou indisponibilidade no envio de dados, extratos e esclarecimentos podem provocar a reprogramação proporcional do cronograma de entregas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 9: FLUXO DE COMUNICAÇÃO
+         ==================================================================== -->
+    <section class="slide" id="slide-9" data-index="8" data-title="Fluxo de Comunicação">
+      <div class="slide-bg-arrow" aria-hidden="true">↗</div>
+      <div class="slide-content">
+        <div class="slide-category">
+          <span class="phase-num">08</span>
+          <span class="slash">/</span>
+          <span>Alinhamento & Governança</span>
+        </div>
+
+        <h2 class="slide-title">
+          Fluxo de Comunicação: <span class="highlight-silver">Canal Direto e Objetivo</span>
+        </h2>
+
+        <!-- Banner de Fluxo de Pessoas -->
+        <div class="comm-flow-banner">
+          <div class="comm-node accent"><span>GTX CONSULTORIA</span></div>
+          <span class="comm-arrow">↔</span>
+          <div class="comm-node"><span>COORDENAÇÃO FINANCEIRA</span></div>
+          <span class="comm-arrow">↔</span>
+          <div class="comm-node"><span>OPERAÇÃO FINANCEIRA FRETOU</span></div>
+        </div>
+
+        <!-- 5 Blocos Executivos -->
+        <div class="comm-blocks-grid">
+          <!-- Bloco 1 -->
+          <div class="comm-block-card">
+            <h4 class="comm-block-title"><span class="dot"></span> Alinhamentos</h4>
+            <p class="comm-block-desc" contenteditable="false" data-editable="s9-b1">
+              Reuniões periódicas estruturadas para checagem de avanços e resolução de pontos críticos.
+            </p>
+          </div>
+
+          <!-- Bloco 2 -->
+          <div class="comm-block-card">
+            <h4 class="comm-block-title"><span class="dot"></span> Pendências</h4>
+            <p class="comm-block-desc" contenteditable="false" data-editable="s9-b2">
+              Centralização e acompanhamento transparente de todos os pontos abertos para validação.
+            </p>
+          </div>
+
+          <!-- Bloco 3 -->
+          <div class="comm-block-card">
+            <h4 class="comm-block-title"><span class="dot"></span> Documentação</h4>
+            <p class="comm-block-desc" contenteditable="false" data-editable="s9-b3">
+              Compartilhamento organizado e seguro das bases de dados, extratos e relatórios.
+            </p>
+          </div>
+
+          <!-- Bloco 4 -->
+          <div class="comm-block-card">
+            <h4 class="comm-block-title"><span class="dot"></span> Validações</h4>
+            <p class="comm-block-desc" contenteditable="false" data-editable="s9-b4">
+              Responsável designado e prazos definidos para cada questionamento ou conciliação.
+            </p>
+          </div>
+
+          <!-- Bloco 5 -->
+          <div class="comm-block-card">
+            <h4 class="comm-block-title"><span class="dot"></span> Decisões</h4>
+            <p class="comm-block-desc" contenteditable="false" data-editable="s9-b5">
+              Registro formal e documentado dos principais alinhamentos e diretrizes do projeto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 10: DEMANDAS E PRÓXIMOS PASSOS (3 COLUNAS)
+         ==================================================================== -->
+    <section class="slide" id="slide-10" data-index="9" data-title="Demandas & Próximos Passos">
+      <div class="slide-bg-arrow" aria-hidden="true">↗</div>
+      <div class="slide-content">
+        <div class="slide-category">
+          <span class="phase-num">09</span>
+          <span class="slash">/</span>
+          <span>Largada Operacional</span>
+        </div>
+
+        <h2 class="slide-title">
+          Demandas & Próximos Passos: <span class="highlight-silver">Início Imediato</span>
+        </h2>
+
+        <div class="next-steps-3col-grid">
+          <!-- Coluna 1: DEMANDA CONJUNTA -->
+          <div class="action-col-card joint">
+            <span class="col-header-tag">Atuação Conjunta</span>
+            <h3 class="col-main-title">DEMANDA CONJUNTA</h3>
+            <div class="col-actions-stack">
+              <div class="action-task-box">
+                <strong>Mapeamento do Fluxo Financeiro</strong>
+                <p>GTX + Fretou realizam a imersão para compreender detalhadamente o processo atual:</p>
+                <div class="flow-sequence-pill">
+                  Entrada → Registro → Recebimento → Conciliação → Controle → Fechamento
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna 2: DEMANDAS FRETOU -->
+          <div class="action-col-card fretou">
+            <span class="col-header-tag">Ações Imediatas</span>
+            <h3 class="col-main-title">DEMANDAS FRETOU</h3>
+            <div class="col-actions-stack">
+              <div class="action-task-box">
+                <strong>01. Extratos Bancários 2025</strong>
+                <p>Enviar extratos bancários de todas as contas ativas do exercício de 2025.</p>
+              </div>
+              <div class="action-task-box">
+                <strong>02. Extratos Bancários 2026</strong>
+                <p>Enviar extratos bancários dos períodos já transcorridos de 2026.</p>
+              </div>
+              <div class="action-task-box">
+                <strong>03. Suporte e Esclarecimentos</strong>
+                <p>Disponibilizar informações e esclarecimentos necessários para validação ágil das movimentações.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna 3: DEMANDAS GTX -->
+          <div class="action-col-card gtx">
+            <span class="col-header-tag">Entregas Iniciais</span>
+            <h3 class="col-main-title">DEMANDAS GTX</h3>
+            <div class="col-actions-stack">
+              <div class="action-task-box">
+                <strong>01 — REVISÃO GERENCIAL</strong>
+                <p>Realizar o processo de revisão/auditoria financeira gerencial dos dados.</p>
+              </div>
+              <div class="action-task-box">
+                <strong>02 — PRIMEIRO RELATÓRIO</strong>
+                <p>Executar e apresentar o 1º Relatório de Auditoria Financeira Gerencial de 2026.</p>
+              </div>
+              <div class="action-task-box">
+                <strong>03 — ANÁLISE Q1 (JAN &bull; FEV &bull; MAR)</strong>
+                <p>Realizar a primeira análise financeira detalhada do 1º Trimestre de 2026.</p>
+              </div>
+              <div class="action-task-box">
+                <strong>04 — DASHBOARD EXECUTIVO</strong>
+                <p>Apresentar a 1ª versão do Dashboard e validar visão e indicadores com a Fretou.</p>
+              </div>
+              <div class="action-task-box">
+                <strong>05 — RELATÓRIO ESTRATÉGICO</strong>
+                <p>Apresentar relatório Q1 com resultados, comportamento financeiro e achados.</p>
+              </div>
+              <div class="action-task-box">
+                <strong>06 — REUNIÃO DE ANÁLISE</strong>
+                <p>Agendar reunião para apresentação dos resultados, validações e próximas ações.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Navigation Bar -->
+  <footer class="presentation-footer" role="navigation">
+    <div class="footer-brand-signature">
+      <strong>GTX</strong> &bull; Movimento que gera crescimento ↗
+    </div>
+
+    <!-- Slide Bullets -->
+    <div class="footer-bullets-nav" id="footerBulletsNav" aria-label="Navegação pelos slides">
+      <!-- Bullets gerados via JS dinamicamente (10 slides) -->
+    </div>
+
+    <!-- Controls -->
+    <div class="footer-nav-controls">
+      <button class="nav-arrow-btn" id="btnPrevSlide" title="Slide Anterior (Seta Esquerda / Backspace)">
+        &larr;
+      </button>
+
+      <div class="slide-counter-display">
+        <span class="current" id="currentSlideNum">01</span> / <span id="totalSlidesNum">10</span>
+      </div>
+
+      <button class="nav-arrow-btn" id="btnNextSlide" title="Próximo Slide (Seta Direita / Espaço)">
+        &rarr;
+      </button>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       MODAL 1: VISÃO GERAL EM GRADE (SLIDE OVERVIEW)
+       ==================================================================== -->
+  <div class="overview-modal-overlay" id="overviewModal" aria-modal="true" role="dialog">
+    <div class="overview-modal-header">
+      <div class="overview-title">
+        <span>Visão Geral dos Slides</span>
+        <span class="badge">10 Slides</span>
+      </div>
+      <button class="overview-close-btn" id="btnCloseOverview" title="Fechar">&times;</button>
+    </div>
+
+    <div class="overview-grid" id="overviewGrid">
+      <!-- Cards gerados via JS dinamicamente para os 10 slides -->
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 2: PERSONALIZAÇÃO & DADOS DO CLIENTE
+       ==================================================================== -->
+  <div class="editor-modal-overlay" id="customizerModal" aria-modal="true" role="dialog">
+    <div class="editor-modal-box">
+      <div class="editor-header">
+        <h3>⚙️ Personalizar Dados do Projeto</h3>
+        <button class="overview-close-btn" id="btnCloseCustomizer">&times;</button>
+      </div>
+
+      <div class="editor-body">
+        <div class="editor-field">
+          <label for="inputClientName">Nome da Parceria / Cliente</label>
+          <input type="text" id="inputClientName" value="Fretou Brasil × GTX">
+        </div>
+
+        <div class="editor-field">
+          <label for="inputProjectDuration">Ciclo do Projeto</label>
+          <input type="text" id="inputProjectDuration" value="Exercício 2026">
+        </div>
+
+        <div class="editor-field">
+          <label for="inputKickoffDate">Data da Reunião Final</label>
+          <input type="text" id="inputKickoffDate" value="15 de Janeiro de 2027">
+        </div>
+
+        <div class="editor-field">
+          <label for="inputLeadPartner">Lead Partner da GTX</label>
+          <input type="text" id="inputLeadPartner" value="Lucas Prado &bull; Diretor de Estratégia">
+        </div>
+
+        <div class="editor-field">
+          <label for="inputClientSponsor">Coordenação Fretou</label>
+          <input type="text" id="inputClientSponsor" value="Coordenação Financeira Fretou">
+        </div>
+      </div>
+
+      <div class="editor-footer">
+        <button class="hud-btn" id="btnResetDefaults">Restaurar Padrão</button>
+        <button class="hud-btn primary" id="btnSaveCustomizer">Salvar e Aplicar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 3: GUIA DE ATALHOS DE TECLADO
+       ==================================================================== -->
+  <div class="help-modal-overlay" id="helpModal" aria-modal="true" role="dialog">
+    <div class="help-modal-box">
+      <div class="editor-header" style="padding: 0 0 1rem 0; margin-bottom: 1rem;">
+        <h3 style="font-size: 1.2rem;">⌨️ Atalhos da Apresentação GTX</h3>
+        <button class="overview-close-btn" id="btnCloseHelp">&times;</button>
+      </div>
+
+      <div class="help-shortcuts-list">
+        <div class="shortcut-row">
+          <span>Avançar Slide</span>
+          <div><span class="kbd-badge">&rarr;</span> ou <span class="kbd-badge">Espaço</span> ou <span class="kbd-badge">&darr;</span></div>
+        </div>
+        <div class="shortcut-row">
+          <span>Voltar Slide</span>
+          <div><span class="kbd-badge">&larr;</span> ou <span class="kbd-badge">&uarr;</span> ou <span class="kbd-badge">Backspace</span></div>
+        </div>
+        <div class="shortcut-row">
+          <span>Visão Geral (Grid de Slides)</span>
+          <div><span class="kbd-badge">G</span> ou <span class="kbd-badge">O</span></div>
+        </div>
+        <div class="shortcut-row">
+          <span>Modo Edição Direta de Textos</span>
+          <div><span class="kbd-badge">E</span></div>
+        </div>
+        <div class="shortcut-row">
+          <span>Modo Tela Cheia (Fullscreen)</span>
+          <div><span class="kbd-badge">F</span></div>
+        </div>
+        <div class="shortcut-row">
+          <span>Exportar / Imprimir em PDF</span>
+          <div><span class="kbd-badge">P</span> ou <span class="kbd-badge">Ctrl+P</span></div>
+        </div>
+        <div class="shortcut-row">
+          <span>Fechar modais / Voltar</span>
+          <div><span class="kbd-badge">Esc</span></div>
+        </div>
+      </div>
+
+      <button class="hud-btn primary" id="btnGotItHelp" style="width: 100%;">Entendido</button>
+    </div>
+  </div>
+
+  <!-- Presentation Application Engine Script -->
+  <script src="app.js"></script>
+</body>
+</html>
